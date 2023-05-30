@@ -1,3 +1,6 @@
+@tailwind components;
+@tailwind utilities;
+
 *,
 *::before,
 *::after {
@@ -6,17 +9,8 @@
   box-sizing: border-box;
 }
 
-:root {
-  --flow-space: 1rem;
-  --gap: 1rem;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+a {
+  text-decoration: none;
 }
 
 img,
@@ -28,6 +22,16 @@ picture {
 button,
 input {
   font: inherit;
+}
+
+button {
+  cursor: pointer;
+  padding: 0.15rem 1rem;
+}
+
+ul,
+ol {
+  list-style: none;
 }
 
 html {
@@ -50,23 +54,9 @@ body {
   font-weight: 500;
 }
 
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* Spacing */
-.flow > * + * {
-  margin-top: var(--flow-space);
+main {
+  min-height: 30vh;
+  display: grid;
+  place-content: center;
+  text-align: center;
 }
