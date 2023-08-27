@@ -5,17 +5,15 @@ function Home() {
   const navigate = useNavigate();
 
   function handleNavigate() {
-    navigate("/about");
+    navigate("/products");
   }
 
   return (
     <Layout>
-      <div>
-        <h1 className="text-center">Home Page</h1>
-        <button onClick={handleNavigate} className="m-4">
-          Navigate to About
-        </button>
-      </div>
+      <h1 className="text-center">The Home Page</h1>
+      <button onClick={handleNavigate} className="m-auto btn btn--green">
+        Go to Products
+      </button>
     </Layout>
   );
 }

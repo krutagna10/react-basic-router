@@ -3,9 +3,7 @@ import Layout from "../../layout/Layout.jsx";
 function About() {
   return (
     <Layout>
-      <div>
-        <h1 className="text-center">About Page</h1>
-      </div>
+      <h1 className="text-center">The About Page</h1>
     </Layout>
   );
 }
