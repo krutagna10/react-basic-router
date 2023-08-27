@@ -1,34 +1,33 @@
 import Layout from "../../layout/Layout.jsx";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import ProductsContext from "../../context/ProductsContext.jsx";
 
 function Products() {
-  const products = [
-    {
-      id: "product-1",
-      title: "Product 1",
-    },
-    {
-      id: "product-2",
-      title: "Product 2",
-    },
-    {
-      id: "product-3",
-      title: "Product 3",
-    },
-  ];
+  const { products } = useContext(ProductsContext);
 
   return (
     <Layout>
-      <div>
-        <h1 className="text-center">Products Page</h1>
-      </div>
+      <h1 className="text-center">The Products Page</h1>
       <ul className="m-6">
-        {products.map((product, index) => (
-          <li key={index} className="flex items-center gap-4">
-            <h2>{product.title}</h2>
-            <Link to={`${product.id}`}>See Details</Link>
-          </li>
-        ))}
+        <table>
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>View Product Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((product, index) => (
+              <tr key={product.id}>
+                <td>{index + 1}</td>
+                <td>
+                  <Link to={product.id}>View Product</Link>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </ul>
     </Layout>
   );

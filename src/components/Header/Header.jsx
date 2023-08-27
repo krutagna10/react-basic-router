@@ -1,6 +1,4 @@
 import { Link, NavLink } from "react-router-dom";
-import "./Header.css";
-
 function Header() {
   const links = [
     {
@@ -22,15 +20,12 @@ function Header() {
   ];
 
   return (
-    <header className="flex justify-between p-6">
-      <Link to="/">
-        <h2 className="text-black">Router</h2>
-      </Link>
+    <header className="flex justify-center m-8">
       <nav>
-        <ul className="flex gap-6">
+        <ul className="flex gap-10">
           {links.map((link, index) => (
             <li key={index}>
-              <NavLink className="link" to={link.to}>
+              <NavLink className="text-xl" to={link.to}>
                 {link.text}
               </NavLink>
             </li>
