@@ -25,7 +25,9 @@ function Product() {
             <td>{product.title}</td>
             <td>{product.description}</td>
             <td>
-              <Link to="/">Go Back</Link>
+              <Link to=".." relative="path">
+                Go Back
+              </Link>
             </td>
           </tr>
         </tbody>

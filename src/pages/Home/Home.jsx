@@ -11,7 +11,7 @@ function Home() {
   return (
     <Layout>
       <h1 className="text-center">The Home Page</h1>
-      <button onClick={handleNavigate} className="m-auto btn btn--green">
+      <button onClick={handleNavigate} className="m-auto btn">
         Go to Products
       </button>
     </Layout>

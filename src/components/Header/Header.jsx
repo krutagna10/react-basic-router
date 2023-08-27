@@ -1,4 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
+import "./Header.css";
+
 function Header() {
   const links = [
     {
@@ -25,7 +27,7 @@ function Header() {
         <ul className="flex gap-10">
           {links.map((link, index) => (
             <li key={index}>
-              <NavLink className="text-xl" to={link.to}>
+              <NavLink className="nav-link text-xl" to={link.to}>
                 {link.text}
               </NavLink>
             </li>
