@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useOutletContext, useParams } from "react-router-dom";
 import Layout from "../../layout/Layout.jsx";
 import { useContext } from "react";
 import ProductsContext from "../../context/ProductsContext.jsx";
@@ -6,12 +6,13 @@ import ProductsContext from "../../context/ProductsContext.jsx";
 function Product() {
   const { products } = useContext(ProductsContext);
   const { id } = useParams();
+  const { text } = useOutletContext();
 
   const [product] = products.filter((product) => product.id === id);
 
   return (
-    <Layout>
-      <h1>The Product Page</h1>
+    <div>
+      <h3>Product {text}</h3>
       <table>
         <thead>
           <tr>
@@ -32,7 +33,7 @@ function Product() {
           </tr>
         </tbody>
       </table>
-    </Layout>
+    </div>
   );
 }
 

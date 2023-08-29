@@ -1,14 +1,14 @@
-import Layout from "../../layout/Layout.jsx";
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 import { useContext } from "react";
 import ProductsContext from "../../context/ProductsContext.jsx";
 
 function Products() {
   const { products } = useContext(ProductsContext);
+  const { text } = useOutletContext();
 
   return (
-    <Layout>
-      <h1 className="text-center">The Products Page</h1>
+    <div>
+      <h3 className="text-center">Index {text}</h3>
       <ul className="m-6">
         <table>
           <thead>
@@ -29,7 +29,7 @@ function Products() {
           </tbody>
         </table>
       </ul>
-    </Layout>
+    </div>
   );
 }
 
